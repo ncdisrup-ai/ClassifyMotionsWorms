@@ -10,7 +10,7 @@ Classify (time series classification) and Study the motion of Worms (time series
 
 Detail:
 
-(Objective 1) Can we classify the type of worm using the information provided by the eigenworm series?
+**(Objective 1)** Can we classify the type of worm using the information provided by the eigenworm series?
 
 To answer the first research question of this project we will find the best classifier model and/or representation model for our dataset.
 To do so we will try different scalers, models and representation methods combinations, with 4 Scalers, 4 Representation methods and 14 models.
@@ -108,7 +108,7 @@ b) Data Visualization: Presenting insights through plots, charts, and graphs to 
 6. Deployment Deploy the model into production and monitor its performance over time.
 
 
-(Objective 2) For a specific worm, how can we model its motion, i.e., the eigenworm? 
+**(Objective 2)** For a specific worm, how can we model its motion, i.e., the eigenworm? 
 
 Perform time series analysis to model the movement of one single worm. In this case, we will consider the worm in the train set indexed by 5.
 we will work through a time series forecasting project from end-to-end, from downloading the dataset and defining the problem to training a final model and making predictions. The steps we will work through are as follows:
@@ -148,7 +148,7 @@ Please see the description in .ipynb about this project.
 ##  🚀 Results 
 
 
-(Objective 1) Can we classify the type of worm using the information provided by the eigenworm series?
+**(Objective 1)** Can we classify the type of worm using the information provided by the eigenworm series?
 
 The best classification model obtained was the **SupportVectorClassifier(C=10,gamma='auto')** with a **StandarScaler()** scaler with a `Precison Score` of 0.5854, `Recall Score` of 0.7500, `F1-Score` of 0.6575 and a `MCC Score` of 0.3602.
 The Support Vector Machine classifier model got the best result (SVC), with the hyperparameter C = 10 and gama  = 'auto. **The gamma parameter controls the width of the Gaussian Kernel** it determines the scale of what it means for points to be close together. The **C parameter** is a regularization parameter similar to the linear models, it limits the importance of each point, so a low **C** can avoid the overfitting of the model.
@@ -160,7 +160,7 @@ The **PiecewiseAggregateApproximation** representation method reduces the dimens
 
 The dataset has only 258 traces of worn (180 traces for training, from which 23 were duplicates so just 157 traces for training, and 78 traces for testing). Each trace had 900 observations. We just needed to classify each trace of worn like class 1:wild-type (has 109 cases: training+test), or class 2 mutant (four types) (has 149 cases: training+test). The training dataset (157 traces for training,) had no nulls, and just a few outliers (we used scaler). The best results that we got with classification models was: precision = 0.5854; recall = 0.7500, f1 = 0.6575; mcc = 0.3602 for two classes..... After analyzing the results, we can conclude that we can classify the type of worm using the information provided by the eigenworm, but the **dataset was small**, with only 157, w/ no duplicates, traces for trainning and 78 traces for testing, that made our classification challenging, so the **results are promising, but there is still room for improvement, mainly if we obtain more data to train**.
 
-(Objective 2) For a specific worm, how can we model its motion, i.e., the eigenworm?
+**(Objective 2)** For a specific worm, how can we model its motion, i.e., the eigenworm?
    
 We can see that the **results for the validation dataset were good**, because:
 - the RMSE for validation dataset (RMSE=0.028) was even better than the RMSE for TrainTest dataset (RMSE=0.036) and the persistency model (RMSE=0,029)
