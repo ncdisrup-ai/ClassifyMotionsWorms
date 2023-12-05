@@ -122,6 +122,7 @@ we will work through a time series forecasting project from end-to-end, from dow
 
 ## 📚 Data
 
+
 Data with the projects (to train the model and to apply the model) are in data dir.
  
 The data relates to 258 traces of worms converted into four "eigenworm" series. The eigenworm data are lengths from 17984 to 100674 (sampled at 30 Hz, so from 10 minutes to 1 hour) and in four dimensions (eigenworm 1 to 4). There are five classes: N2, goa-1, unc-1, unc-38 and un63. N2 is wildtype (i.e., normal) the other 4 are mutant strains. These datasets are the first dimension only (first eigenworm) averaged down so that all series are lengths 900 (the single hour-long
@@ -134,16 +135,21 @@ The following files are provided:
 
 ##  🚀 Quick Install
 
+
 jupiter notebook (.ipynb) file in model dir
 
 
 ## 📖 Documentation
 
+
 Please see the description in .ipynb about this project.
 
 
 ##  🚀 Results 
-1) Can we classify the type of worm using the information provided by the eigenworm series? (Objective 1)
+
+
+(Objective 1) Can we classify the type of worm using the information provided by the eigenworm series?
+
 The best classification model obtained was the **SupportVectorClassifier(C=10,gamma='auto')** with a **StandarScaler()** scaler with a `Precison Score` of 0.5854, `Recall Score` of 0.7500, `F1-Score` of 0.6575 and a `MCC Score` of 0.3602.
 The Support Vector Machine classifier model got the best result (SVC), with the hyperparameter C = 10 and gama  = 'auto. **The gamma parameter controls the width of the Gaussian Kernel** it determines the scale of what it means for points to be close together. The **C parameter** is a regularization parameter similar to the linear models, it limits the importance of each point, so a low **C** can avoid the overfitting of the model.
 This makes sense in being the best classification model combined with the Scaler **StandardScaler()**, as we found in the EDA the dataset has outliers and the  StandarScaler manage to handle outliers.
@@ -154,7 +160,8 @@ The **PiecewiseAggregateApproximation** representation method reduces the dimens
 
 The dataset has only 258 traces of worn (180 traces for training, from which 23 were duplicates so just 157 traces for training, and 78 traces for testing). Each trace had 900 observations. We just needed to classify each trace of worn like class 1:wild-type (has 109 cases: training+test), or class 2 mutant (four types) (has 149 cases: training+test). The training dataset (157 traces for training,) had no nulls, and just a few outliers (we used scaler). The best results that we got with classification models was: precision = 0.5854; recall = 0.7500, f1 = 0.6575; mcc = 0.3602 for two classes..... After analyzing the results, we can conclude that we can classify the type of worm using the information provided by the eigenworm, but the **dataset was small**, with only 157, w/ no duplicates, traces for trainning and 78 traces for testing, that made our classification challenging, so the **results are promising, but there is still room for improvement, mainly if we obtain more data to train**.
 
-2) For a specific worm, how can we model its motion, i.e., the eigenworm? (Objective 2)
+(Objective 2) For a specific worm, how can we model its motion, i.e., the eigenworm?
+   
 We can see that the **results for the validation dataset were good**, because:
 - the RMSE for validation dataset (RMSE=0.028) was even better than the RMSE for TrainTest dataset (RMSE=0.036) and the persistency model (RMSE=0,029)
 - The prediction and the validation set are almost 100% aligned 
