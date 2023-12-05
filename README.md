@@ -3,12 +3,10 @@ Classify (time series classification) and Study the motion of Worms (time series
   
 ## 🤔 What is this?
 **Description:**  The main goal of this project is to answer to those questions:
-
 (Objective 1) Can we classify the type of worm using the information provided by the eigenworm series?
-
 (Objective 2) For a specific worm, how can we model its motion, i.e., the eigenworm?
 
-Detail:.
+Detail:
 (Objective 1) Can we classify the type of worm using the information provided by the eigenworm series?
 To answer the first research question of this project we will find the best classifier model and/or representation model for our dataset.
 To do so we will try different scalers, models and representation methods combinations, with 4 Scalers, 4 Representation methods and 14 models.
