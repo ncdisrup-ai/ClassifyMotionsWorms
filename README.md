@@ -109,6 +109,7 @@ b) Data Visualization: Presenting insights through plots, charts, and graphs to 
 
 
 (Objective 2) For a specific worm, how can we model its motion, i.e., the eigenworm? 
+
 Perform time series analysis to model the movement of one single worm. In this case, we will consider the worm in the train set indexed by 5.
 we will work through a time series forecasting project from end-to-end, from downloading the dataset and defining the problem to training a final model and making predictions. The steps we will work through are as follows:
 1. Problem description
