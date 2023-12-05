@@ -4,9 +4,9 @@ Classify (time series classification) and Study the motion of Worms (time series
 ## 🤔 What is this?
 **Description:**  The main goal of this project is to answer to those questions:
 
-(Objective 1) Can we classify the type of worm using the information provided by the eigenworm series?
+**(Objective 1)** Can we classify the type of worm using the information provided by the eigenworm series?
 
-(Objective 2) For a specific worm, how can we model its motion, i.e., the eigenworm?
+**(Objective 2)** For a specific worm, how can we model its motion, i.e., the eigenworm?
 
 Detail:
 
@@ -165,4 +165,5 @@ The dataset has only 258 traces of worn (180 traces for training, from which 23 
 We can see that the **results for the validation dataset were good**, because:
 - the RMSE for validation dataset (RMSE=0.028) was even better than the RMSE for TrainTest dataset (RMSE=0.036) and the persistency model (RMSE=0,029)
 - The prediction and the validation set are almost 100% aligned 
+
 The model is validated
